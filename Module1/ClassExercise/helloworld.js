@@ -18,6 +18,3 @@
 
  console.log("Hello World");
  
-
-
-
