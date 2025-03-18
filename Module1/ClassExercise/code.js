@@ -18,3 +18,7 @@
 
  console.log("Hello World");
  
+ //Variables
+
+ let firstName;
+ firstName = 'Andre';
