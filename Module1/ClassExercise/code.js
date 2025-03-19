@@ -1,24 +1,13 @@
-//console.log("hello world");
+console.log("hello world, 'this is in quotes'");
 
-//function sayHello() {
-    //console.log("Hello");
- //}
+function sayHello() {
+   console.log("Hello this is my hello function");
+}
 
- // this is to call the function
- //sayHello();
+sayHello();
 
- //function sum(a, b) {
-   // console.log(a + b);
-    //return a + b;
- //}
+function sum(a, b) {
+   console.log(a + b);
+}
 
- //sum(5, 1);
-
- //ABOVE IS FOR SCHOOL!!!!
-
- console.log("Hello World");
- 
- //Variables
-
- let firstName;
- firstName = 'Andre';
+//class recording time 36.23
