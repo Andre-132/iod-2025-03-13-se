@@ -1,0 +1,116 @@
+/* I. Selectors */
+article {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid black;
+}
+/* Put styles for questions 1.1, 1.2, 1.3 and 1.4 here */
+.style-me1 {
+  color: red;
+}
+#style-me2 {
+  color: blue;
+}
+.style-me1#style-me2 {
+  color: purple;
+}
+/* Put styles for questions 2.1 and 2.2 here */
+.my-descendants-are-styled p {
+  background-color: red;
+}
+.my-children-are-styled > p {
+  background-color: lightgreen;
+}
+
+/* II. Box model and common properties */
+/* Put styles for questions 1-8 here */
+.box {
+  background-color: purple;
+  margin: 10px 10px;
+  padding: 10px;
+  width: 20vh;
+  height: 20vh;
+  border: 10px solid green;
+  box-sizing: border-box;
+  overflow: scroll;
+  outline: solid black 10px;
+  border-radius: 20px;
+  background-image: url(./assets/img1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* III. Positioning */
+/* Put styles for questions 1-3 here */
+.position-absolute {
+  position: absolute;
+  top: 0;
+  background-color: yellow;
+}
+.position-relative {
+  position: relative;
+  left: 90px;
+  background-color: orange;
+}
+.position-sticky {
+  position: sticky;
+  top: 50px;
+  background-color: grey;
+}
+/* IV. Styling text */
+/* Put styles for questions 1-10 here */
+.text-style {
+  color: blue;
+  font-size: 30px;
+  line-height: 60px;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 1vh;
+  word-spacing: 1vh;
+  text-transform: uppercase;
+  text-decoration: solid;
+}
+.bungee-tint-regular {
+  font-family: "Bungee Tint", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/* V. Styling links */
+/* Put styles for questions 1-3 here */
+a:link {
+  color: blueviolet;
+  font-size: 3vh;
+  font-weight: 30px;
+  text-decoration: wavy;
+}
+a:hover {
+  color: green;
+  text-decoration: wavy;
+}
+a:visited {
+  color: red;
+  font-style: italic;
+}
+
+/* VI. calc() */
+/* Put styles for questions 1-3 here */
+.calc-style {
+  width: 100vw;
+  background-color: lightcoral;
+}
+.calc-style-adjusted {
+  width: calc(100vw - 100px);
+  background-color: lightblue;
+}
+.fixed-width-col {
+  width: 350px;
+  display: inline-block;
+  height: 150px;
+  vertical-align: top;
+}
+.fluid-col {
+  display: inline-block;
+  width: calc(100vw - 350px);
+  height: 150px;
+  vertical-align: top;
+}
