@@ -2,40 +2,90 @@ body {
   font-family: sans-serif;
   font-size: 16px;
 }
-
 a {
   text-decoration: none;
   color: purple;
 }
-
 .background-1 {
   background: #68b0ab;
 }
-
 .background-2 {
   background: #8fc0a9;
 }
-
 .background-3 {
   background: #c8d5b9;
 }
-
 .background-4 {
   background: #faf3dd;
 }
-
 .m-20 {
   margin: 20px;
 }
-
 .h-80 {
   height: 80px;
 }
-
 .h-400 {
   height: 400px;
 }
-
 .w-80 {
   width: 80px;
+}
+.flex-container {
+  display: flex;
+  background-color: lightslategray;
+  gap: 10px;
+  padding: 10px;
+  flex-direction: row;
+}
+.flex-item-1 {
+  flex: 1;
+  background-color: lightblue;
+  padding: 10px;
+}
+.flex-item-2 {
+  flex: 2;
+  background-color: lightgreen;
+  padding: 10px;
+}
+.flex-item-3 {
+  flex: 3;
+  background-color: lightcoral;
+  padding: 10px;
+}
+.flex-item-4 {
+  flex: 4;
+  background-color: lightyellow;
+  padding: 10px;
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-basis-50 {
+  flex-basis: 50%;
+}
+.flex-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: flex-end;
+  justify-content: center;
+}
+.flex-menu li {
+  padding: 10px;
+  order: 1;
+}
+.flex-menu li {
+  flex-grow: 1;
+  text-align: center;
 }
