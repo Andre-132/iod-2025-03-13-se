@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.resume-container {
+  display: flex;
+  justify-content: right;
+}
+
+.resume-content {
+  border: 1px solid black;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: aliceblue;
+  height: 100vh;
+}
+#image {
+  height: 25vh;
+  width: 20vh;
+  border-radius: 20%;
+  object-fit: cover;
+}
+.info-container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20%;
+}
+.info-content {
+  position: absolute;
+  border: 1px solid black;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: lightsteelblue;
+  height: 100vh;
+}
