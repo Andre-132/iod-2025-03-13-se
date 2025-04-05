@@ -1,23 +1,21 @@
 body {
   display: flex;
   flex-direction: row;
-  margin: 0;
   font-family: "Times New Roman", Times, serif;
+  background-color: gray;
 }
-
 .resume-container {
   display: flex;
-  justify-content: right;
   position: relative;
+  width: 78%;
+  justify-content: center;
 }
-
 .resume-content {
-  width: 80%;
-  border: 3px solid blue;
+  width: 50%;
+  border: 2px solid black;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: aliceblue;
-  height: 100%;
-  padding: 2%;
+  background-color: lightcyan;
+  height: 100vh;
 }
 #image {
   height: 25vh;
@@ -29,16 +27,18 @@ body {
   width: 19%;
   display: flex;
   justify-content: flex-start;
-  border: 2px solid red;
-  position: relative;
+  border-right: thick double lightcyan;
   flex-direction: column;
 }
 .info-content {
   width: 100%;
-  position: relative;
-  border: 1px solid black;
-  padding: 20px;
-  border: 1px solid #ccc;
   background-color: lightsteelblue;
   height: 100%;
+  border: solid black;
+}
+a:hover {
+  color: green;
+}
+a {
+  font-family: "Times New Roman", Times, serif;
 }
