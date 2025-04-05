@@ -5,6 +5,7 @@ body {
   background-color: gray;
 }
 .resume-container {
+  box-sizing: content-box;
   display: flex;
   position: relative;
   width: 78%;
@@ -24,6 +25,7 @@ body {
   object-fit: cover;
 }
 .info-container {
+  box-sizing: content-box;
   width: 19%;
   display: flex;
   justify-content: flex-start;
@@ -42,24 +44,35 @@ a:hover {
 a {
   font-family: "Times New Roman", Times, serif;
 }
+
 @media (max-width: 600px) {
   body {
     display: flex;
     font-size: 10px;
     background-color: cadetblue;
     flex-direction: column;
-    #image {
-      height: 20%;
-      width: 70%;
-      object-fit: cover;
-    }
-    .info-container {
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      align-items: center;
-      width: 30%;
-      justify-content: center;
-    }
+  }
+  .header {
+    width: 100%;
+    text-align: center;
+  }
+  #image {
+    height: 20%;
+    width: 30%;
+    object-fit: cover;
+  }
+  .info-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .info-content {
+    padding: 2%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .resume-container {
+    width: 100%;
   }
 }
