@@ -12,21 +12,22 @@ console.log("2" * "3"); // This equals 6 because the "*" means multiplication an
 
 console.log(4 + 5 + "px"); // This equals 9px and that's because the string "px" is adding to pixels attribute to the solution 4 + 5 which equals 9.
 
-console.log("$" + 4 + 5); // This equals 45$
+console.log("$" + 4 + 5); // This equals 45$ and that's because the string holds the "$" symbol and 4 + 5 = the two combined numbers in JavaScript.
 
-"4" - 2;
+console.log("4" - 2); // This equals 2 because the string holds the number 4 which would place it before the -2 making the equation 4 - -2 = 2.
 
-"4px" - 2;
+console.log("4px" - 2); // This equals NAN because JavaScript tries to perform a coercion when combining both of the data types and attempts to covert them into compatible types for the operation.
 
-" -9 " + 5;
+console.log(" -9 " + 5); // This equals -95 and the reason for this is because the "+" symbol serves multiple purposes in JavaScript and in this case it's jointing the numbers together because -9 is with a string.
 
-" -9 " - 5;
+console.log(" -9 " - 5); // This equals -14 and thats because the "-" symbol behaves differently than the "+".
 
-null + 1;
+console.log(null + 1); // This equals 1 and that's because when null is used in mathematical equations it is treated as 0.
 
-undefined + 1;
+console.log(undefined + 1); // This equals NAN and that's because when undefined is used in a mathematical equation JavaScript cannot coercion it into a valid number.
 
-undefined == null;
+console.log(undefined == null); // This equals True and that's because the "==" operator in JavaScript performs a type coercion.
 
-undefined === null;
-" \t \n" - 2;
+console.log(undefined === null); // This equals false and that's because the "===" in JavaScript does not perform a type coercion.
+
+console.log(" \t \n" - 2); // This equals -2 because JavaScript converts the whitespace-only string into a value 0.
