@@ -1,3 +1,4 @@
+// Exercise 1
 console.log("" + 1 + 0); // This equals 10 because empty string has the ability to combine two numbers rather than add them and in JavaScript "number" + number equals the two numbers put beside each other.
 
 console.log("" - 1 + 0); // This equals -1 reason being is because the string takes over -1 and the 0 plays no role since the string takes favor of -1
@@ -31,3 +32,40 @@ console.log(undefined == null); // This equals True and that's because the "==" 
 console.log(undefined === null); // This equals false and that's because the "===" in JavaScript does not perform a type coercion.
 
 console.log(" \t \n" - 2); // This equals -2 because JavaScript converts the whitespace-only string into a value 0.
+
+// Exercise 2
+
+// This is the before "let addition = three + four"
+let addition = Number(three) + Number(four); // This is the correct syntax because, addition has multiple purposes in JavaScript you can combine two strings by using this for example: let addition = "3" + "4"; Or you can do what I done so add two numbers.
+console.log(addition);
+
+// Exercise 3
+
+if ("0") console.log("#2 zero is true"); // This will print because the string "0" is a non-empty string which is true in JavaScript
+
+if (-1) console.log("negative is true"); // This will print because -1 is a non-zero number which is true in JavaScript
+
+if (1) console.log("positive is true"); // This will print because 1 is a non-zero number which is true in JavaScript
+
+// Exercise 4
+
+let a = 2,
+  b = 3;
+let result = `${a} + ${b} is `;
+result += a + b < 10 ? "less than 10" : "greater than 10"; // The += operator in JavaScript is a compound assignment operator
+console.log(result);
+
+// Exercise 5
+let name = "Andre";
+let getGreeting = function (name) {
+  return "Hello " + name + "!";
+};
+
+console.log(getGreeting("Andre"));
+
+let name = "Andre";
+let getGreeting = (name) => {
+  return "Hello " + name + "!";
+};
+
+console.log(getGreeting("Andre"));
