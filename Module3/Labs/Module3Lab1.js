@@ -56,94 +56,93 @@ result += a + b < 10 ? "less than 10" : "greater than 10"; // The += operator in
 console.log(result);
 
 // Exercise 5
-const name = "Andre";
-let getGreeting = function (name) {
+const greetPerson = function (name) {
   return "Hello " + name + "!";
 };
 
-console.log(getGreeting("Andre"));
+console.log(greetPerson("Alice"));
 
-const name = "Andre";
-let getGreeting = (name) => {
-  return "Hello " + name + "!";
-};
+const greetPerson = (name) => "Hello " + name + "!";
 
-console.log(getGreeting("Andre"));
+console.log(greetPerson("Alice"));
 
 // Exercise 6
 
 const westley = {
-  name: 'Westley',
-  numFingers: 5
-  }
-  const rugen = {
-  name: 'Count Rugen',
-  numFingers: 6
-  }
-  const inigo = {
-  firstName: 'Inigo', lastName: 'Montoya'
+  name: "Westley",
+  numFingers: 5,
+};
+
+const rugen = {
+  name: "Count Rugen",
+  numFingers: 6,
+};
+
+const inigo = {
+  firstName: "Inigo",
+  lastName: "Montoya",
   greeting(person) {
-  let greeting = `Hello ${person.name}, my name is ${this.firstName}. `;
-  console.log(greeting + this.getCatchPhrase(person));
+    let greeting = `Hello ${person.name}, my name is ${this.firstName} ${this.lastName}. `;
+    console.log(greeting + this.getCatchPhrase(person));
   },
   getCatchPhrase: (person) =>
-  person.numFingers == 6
-  ? "You killed my father. Prepare to die."
-  : 'Nice to meet you.'
-
+    person.numFingers === 6
+      ? "You killed my father. Prepare to die."
+      : "Nice to meet you.",
 };
-  inigo.greeting(westley)
-  inigo.greeting(rugen)
 
-  // Exercise 7
+inigo.greeting(westley);
+inigo.greeting(rugen);
 
-  const basketballGame = {
-    score: 0,
-    fouls: 0, 
-    
-    freeThrow() {
-      this.score++;
-      return this; 
-    },
-    
-    basket() {
-      this.score += 2;
-      return this; 
-    },
-    
-    threePointer() {
-      this.score += 3;
-      return this; 
-    },
-    
-    addFoul() {
-      this.fouls++;
-      return this; 
-    },
-    
-    halfTime() {
-      console.log(`Halftime score: ${this.score}, Fouls: ${this.fouls}`);
-      return this;
-    },
-    
-    fullTime() {
-      console.log(`Final score: ${this.score}, Fouls: ${this.fouls}`);
-      return this; 
-    }
-  };
-  
-  basketballGame
-    .basket()
-    .freeThrow()
-    .addFoul()
-    .threePointer()
-    .freeThrow()
-    .halfTime()
-    .basket()
-    .addFoul()
-    .fullTime();
+// Exercise 7
 
-    // Exercise 8
+const basketballGame = {
+  score: 0,
+  fouls: 0,
+
+  freeThrow() {
+    this.score++;
+    return this;
+  },
+
+  basket() {
+    this.score += 2;
+    return this;
+  },
+
+  threePointer() {
+    this.score += 3;
+    return this;
+  },
+
+  addFoul() {
+    this.fouls++;
+    return this;
+  },
+
+  halfTime() {
+    console.log(`Halftime score: ${this.score}, Fouls: ${this.fouls}`);
+    return this;
+  },
+
+  fullTime() {
+    console.log(`Final score: ${this.score}, Fouls: ${this.fouls}`);
+    return this;
+  },
+};
+
+basketballGame
+  .basket()
+  .freeThrow()
+  .addFoul()
+  .threePointer()
+  .freeThrow()
+  .halfTime()
+  .basket()
+  .addFoul()
+  .fullTime();
+
+// Exercise 8
 
 function printCityProperties(city) {
   for (let property in city) {
@@ -152,80 +151,80 @@ function printCityProperties(city) {
 }
 
 const sydney = {
-  name: 'Sydney',
+  name: "Sydney",
   population: 5_121_000,
-  state: 'NSW',
-  founded: '26 January 1788',
-  timezone: 'Australia/Sydney',
+  state: "NSW",
+  founded: "26 January 1788",
+  timezone: "Australia/Sydney",
 };
 
 console.log("Sydney Properties:");
 printCityProperties(sydney);
 
 const newYork = {
-  name: 'New York',
+  name: "New York",
   population: 8_468_000,
-  state: 'New York',
-  founded: '1624',
-  timezone: 'America/New_York',
+  state: "New York",
+  founded: "1624",
+  timezone: "America/New_York",
 };
 
 console.log("\nNew York Properties:");
 printCityProperties(newYork);
 
-    // Exercise 9
+// Exercise 9
 
-let teamSports = ['Hockey', 'Cricket', 'Volleyball'];
-let dog1 = 'Bingo';
-let cat1 = { name: 'Fluffy', breed: 'Siberian' };
+let teamSports = ["Hockey", "Cricket", "Volleyball"];
+let dog1 = "Bingo";
+let cat1 = { name: "Fluffy", breed: "Siberian" };
 
 let moreSports = teamSports;
-moreSports.push('Basketball');
-moreSports.unshift('Football');
+moreSports.push("Basketball");
+moreSports.unshift("Football");
 
 let dog2 = dog1;
-dog2 = 'Charlie';
+dog2 = "Charlie";
 
 let cat2 = cat1;
-cat2.name = 'Whiskers';
+cat2.name = "Whiskers";
 
-console.log('Original teamSports:', teamSports); 
-console.log('Original dog1:', dog1); 
-console.log('Original cat1:', cat1); 
+console.log("Original teamSports:", teamSports);
+console.log("Original dog1:", dog1);
+console.log("Original cat1:", cat1);
 
 let independentSports = [...teamSports];
-independentSports.push('Tennis'); 
+independentSports.push("Tennis");
 
-let independentCat = { ...cat1 }; 
-independentCat.name = 'Mittens'; 
+let independentCat = { ...cat1 };
+independentCat.name = "Mittens";
 
-console.log('Modified independentSports:', independentSports); 
-console.log('Original teamSports after independence:', teamSports);
-console.log('Modified independentCat:', independentCat); 
-console.log('Original cat1 after independence:', cat1);
+console.log("Modified independentSports:", independentSports);
+console.log("Original teamSports after independence:", teamSports);
+console.log("Modified independentCat:", independentCat);
+console.log("Original cat1 after independence:", cat1);
 
-    // Exercise 10
+// Exercise 10
 
-    //constructor
+//constructor
 function Person(name, age) {
   this.name = name;
   this.age = age;
   this.human = true;
-  this.canDrive = function() {
-    return this.age >= 16; 
+  this.canDrive = function () {
+    return this.age >= 16;
   };
 }
 
-const person1 = new Person('Alice', 25);
+const person1 = new Person("Alice", 25);
 
-const person2 = new Person('Bob', 12);
+const person2 = new Person("Bob", 12);
 
-console.log('Person 1:', person1);
-console.log('Can Person 1 drive?', person1.canDrive());
-console.log('Person 2:', person2);
-console.log('Can Person 2 drive?', person2.canDrive());
+console.log("Person 1:", person1);
+console.log("Can Person 1 drive?", person1.canDrive());
+console.log("Person 2:", person2);
+console.log("Can Person 2 drive?", person2.canDrive());
 
-    // class
+// class
 class PersonClass {
   constructor(name, age) {
     this.name = name;
@@ -234,11 +233,11 @@ class PersonClass {
   }
 
   canDrive() {
-    return this.age >= 16; 
+    return this.age >= 16;
   }
 }
 
-const person3 = new PersonClass('Charlie', 30);
+const person3 = new PersonClass("Charlie", 30);
 
-console.log('Person 3:', person3);
-console.log('Can Person 3 drive?', person3.canDrive());
+console.log("Person 3:", person3);
+console.log("Can Person 3 drive?", person3.canDrive());
