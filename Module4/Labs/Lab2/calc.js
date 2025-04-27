@@ -12,7 +12,7 @@ buttons.forEach((button) => {
     } else if (value === "=") {
       calculateResult();
     } else {
-      appendValue();
+      appendValue(value);
     }
   });
 });
