@@ -85,7 +85,6 @@ button:active {
   background-color: #c0392b;
 }
 
-/* Make the Clear and Delete buttons span 2 columns each */
 .resets:nth-child(15) {
   grid-column: span 2;
 }
@@ -94,7 +93,6 @@ button:active {
   grid-column: span 2;
 }
 
-/* Fix for the empty operator button */
 .operators:nth-child(11) {
   background-color: #f1c40f;
 }
@@ -103,7 +101,6 @@ button:active {
   background-color: #f39c12;
 }
 
-/* Responsive adjustments */
 @media (max-width: 350px) {
   #content {
     width: 280px;
