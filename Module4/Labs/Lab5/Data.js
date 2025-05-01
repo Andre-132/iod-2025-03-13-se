@@ -4,28 +4,38 @@ let news = [
   { id: 3, title: "Tornado Warning", content: "Residents should prepare..." },
 ];
 
-const container = document.getElementById("news-list");
-const template = document.getElementById("news-template");
+const newsContainer = document.getElementById("news-container");
 
-function renderNews() {
-  container.innerHTML = "";
-
+function displayNews() {
+  newsContainer.innerHTML = "";
   news.forEach((item) => {
-    const clone = template.content.cloneNode(true);
-    clone.querySelector(".card-title").innerText = item.title;
-    clone.querySelector(".card-text").innerText = item.content;
-    container.appendChild(clone);
+    const newsEl = document.createElement("div");
+    newsEl.className = "news-item p-3 border rounded";
+    newsEl.innerHTML = `<h5>${item.title}</h5><p>${item.content}</p>`;
+    newsContainer.appendChild(newsEl);
   });
 }
 
-renderNews();
+displayNews();
 
-setInterval(() => {
-  news.push({
-    id: news.length + 1,
-    title: `Breaking News #${news.length + 1}`,
-    content: "New update just in...",
+setInterval(displayNews, 5000);
+
+document
+  .getElementById("news-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const title = document.getElementById("news-title").value.trim();
+    const content = document.getElementById("news-content").value.trim();
+
+    if (title && content) {
+      news.push({
+        id: news.length + 1,
+        title,
+        content,
+      });
+
+      document.getElementById("news-title").value = "";
+      document.getElementById("news-content").value = "";
+    }
   });
-
-  renderNews();
-}, 5000);
