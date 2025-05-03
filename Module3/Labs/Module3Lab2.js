@@ -32,23 +32,24 @@ console.log(truncate("This text will be truncated if it is too long", 25));
 
 // Exercise 3
 
-const animals = ["Tiger", "Giraffe"];
-animals.push("Elephant", "Lion");
-console.log(animals);
+const animals = ["Tiger", "Giraffe"]; //Animals = the array and its this case its tiger and giraffe
+animals.push("Elephant", "Lion"); // The push() object pushes the chosen animals to the end of the array
+console.log(animals); // logs the array
 
-animals.unshift("Bear", "Zebra");
-console.log(animals);
+animals.unshift("Bear", "Zebra"); // unshift adds in the first specified elements to the start of the array
+console.log(animals); // logs the array
 
-animals.sort();
-console.log(animals);
+animals.sort(); // Sorts the elements of an array and returns it
+console.log(animals); // logs the array
 
 function replaceMiddleAnimal(newValue) {
-  const middleIndex = Math.floor(animals.length / 2);
-  animals[middleIndex] = newValue;
+  // Creating a function to replace the middle animal of the array
+  const middleIndex = Math.floor(animals.length / 2); // middleIndex is the variable, math.floor is a static method that always rounds down the largest number less than or equal to the number given.
+  animals[middleIndex] = newValue; // updating the middle element of the array
 }
 
-replaceMiddleAnimal("Leopard");
-console.log(animals);
+replaceMiddleAnimal("Leopard"); // replaces the middle animal to Leopard
+console.log(animals); // Logs the array
 
 // Exercise 4
 
