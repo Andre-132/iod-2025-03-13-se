@@ -1,5 +1,6 @@
 const { DateTime } = require("luxon");
 
+//Number 1
 const now = DateTime.now();
 console.log(now);
 
@@ -14,6 +15,7 @@ function birthDate() {
 birthDate();
 console.log(birthDate());
 
+// Number 2
 function displayDays() {
   let year = now.year;
   let birthYear = 2004;
@@ -30,6 +32,7 @@ function displayDays() {
 displayDays();
 console.log(displayDays());
 
+// Number 3
 function twoDates(date1, date2) {
   const now = DateTime.now();
   const array1 = date1.split("/");
@@ -73,3 +76,33 @@ let date2 = "7/4/2390";
 
 twoDates(date1, date2);
 console.log(twoDates(date1, date2));
+
+// Number 4
+function whichDateCameFirst(before, after) {
+  const [beforeMonth, beforeDay, beforeYear] = before.split("/").map(Number);
+  const [afterMonth, afterDay, afterYear] = after.split("/").map(Number);
+
+  const beforeDate = new Date(beforeYear, beforeMonth - 1, beforeDay);
+  const afterDate = new Date(afterYear, afterMonth - 1, afterDay);
+
+  if (beforeDate < afterDate) {
+    return `${before} came before ${after}`;
+  } else if (beforeDate > afterDate) {
+    return `${after} came before ${before}`;
+  } else {
+    return `${before} and ${after} are the same date`;
+  }
+}
+
+let before = "5/8/1893";
+let after = "7/4/2390";
+
+console.log(whichDateCameFirst(before, after));
+
+//Number 5
+const londonTime = DateTime.now().setZone("Europe/London");
+
+console.log(
+  "Current time in London:",
+  londonTime.toFormat("HH:mm:ss - dd LLL yyyy")
+);
