@@ -1,8 +1,6 @@
 // Exercise 1
 
-<<<<<<< HEAD
 function makeCounter(startFrom = 0, incrementBy = 1) {
-=======
 function makeCounter() {
   let currentCount = 0;
   return function () {
@@ -38,7 +36,6 @@ counter4();
 counter4();
 
 function makeCounter(startFrom, incrementBy) {
->>>>>>> 61465481c7140cefc033fbd3920f9c2fa551e293
   let currentCount = startFrom;
   return function () {
     currentCount += incrementBy;
@@ -47,7 +44,6 @@ function makeCounter(startFrom, incrementBy) {
   };
 }
 
-<<<<<<< HEAD
 let counter1 = makeCounter(5, 2);
 let counter2 = makeCounter(0, 1);
 
@@ -56,7 +52,6 @@ counter1();
 
 counter2();
 counter2();
-=======
 let counter5 = makeCounter(0, 2);
 let counter6 = makeCounter(5, 3);
 
@@ -67,18 +62,18 @@ counter6();
 
 // Exercise 2
 
-const delayMsg = (msg) => {
-  console.log(`This message will be printed after a delay: ${msg}`);
+const delayMsg = (msg) => { // delayMsg is the variable, and this is a arrow function
+  console.log(`This message will be printed after a delay: ${msg}`); //logs msg
 };
 
-setTimeout(delayMsg, 100, "#1: Delayed by 100ms");
-setTimeout(delayMsg, 20, "#2: Delayed by 20ms");
-setTimeout(delayMsg, 0, "#3: Delayed by 0ms");
-delayMsg("#4: Not delayed at all");
+setTimeout(delayMsg, 100, "#1: Delayed by 100ms"); // setting #1 delay message to 100 ms
+setTimeout(delayMsg, 20, "#2: Delayed by 20ms");  // setting #2 delay message to 20 ms
+setTimeout(delayMsg, 0, "#3: Delayed by 0ms");  // setting #3 delay message to 0 ms
+delayMsg("#4: Not delayed at all"); // not applying a delay message for number 4
 
-const timeoutId = setTimeout(delayMsg, 15000, "#5: Delayed by 15 seconds");
+const timeoutId = setTimeout(delayMsg, 15000, "#5: Delayed by 15 seconds"); // timeoutId is the variable, setTimeout sets the delay message and its set to 15 seconds
 
-clearTimeout(timeoutId);
+clearTimeout(timeoutId); // clearTimeout cancels the timeout previously established
 
 // Exercise 3
 
@@ -341,4 +336,3 @@ fetchURLData("https://jsonplaceholder.typicode.com/todos/1")
 fetchURLData("https://invalid-url.typicode.com")
   .then((data) => console.log("Invalid URL response:", data))
   .catch((error) => console.error("Invalid URL error:", error.message));
->>>>>>> 61465481c7140cefc033fbd3920f9c2fa551e293
