@@ -10,7 +10,7 @@
     "start": "nodemon lab1.js",
     "lab2": "nodemon lab2.js",
     "lab3": "nodemon lab3.js",
-    "lab4": "nodemon lab4.js",
+    "lab4": "nodemon lab4.js"
   },
   "dependencies": {
     "express": "^5.1.0",
