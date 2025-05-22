@@ -3,6 +3,8 @@ const port = 3000;
 
 const math = express();
 
+math.use(express.static("public"));
+
 math.get("/add", (req, res) => {
   const x = parseFloat(req.query.x);
   const y = parseFloat(req.query.y);
