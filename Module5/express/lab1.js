@@ -24,5 +24,3 @@ app2.listen(port2, () => {
   console.log(`Example app listening
 at http://localhost:${port2}`);
 });
-
-// Lab 2

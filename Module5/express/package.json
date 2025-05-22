@@ -7,7 +7,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node lab1.js",
+    "lab2": "node lab2.js",
+    "lab3": "node lab3.js"
   },
   "dependencies": {
     "express": "^5.1.0",
