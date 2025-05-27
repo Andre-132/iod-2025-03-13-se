@@ -1,4 +1,3 @@
-// Part 1
 const express = require("express");
 const port = 3000;
 const names = express();
@@ -71,6 +70,6 @@ names.put("/friends/:id", (req, res) => {
 });
 
 const PORT = 3000;
-names.listen(PORT, () => {
+names.listen(port, () => {
   console.log(`Server running on port ${PORT}`);
 });
