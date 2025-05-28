@@ -1,5 +1,5 @@
 const express = require("express");
-const mathController = require("./controllers/mathController");
+const mathController = require("../lab2");
 const port = 3000;
 
 const math = express();
