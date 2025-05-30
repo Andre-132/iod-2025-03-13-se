@@ -30,8 +30,15 @@ function calculate() {
   else if (operator === "*") endpoint = "multiply";
   else if (operator === "/") endpoint = "divide";
 
-  fetch(`/${endpoint}?x=${encodeURIComponent(x)}&y=${encodeURIComponent(y)}`)
+  console.log(endpoint, x, y);
+
+  fetch(
+    `/calculator/${endpoint}?x=${encodeURIComponent(x)}&y=${encodeURIComponent(
+      y
+    )}`
+  )
     .then((res) => {
+      console.log(res);
       if (!res.ok) throw new Error("Server error");
       return res.text();
     })
@@ -40,7 +47,7 @@ function calculate() {
       currentInput = data.toString();
     })
     .catch((err) => {
-      console.error(err);
+      console.error(err, "Hit My Catch Block");
       document.getElementById("display").value = "Error";
     });
 }
