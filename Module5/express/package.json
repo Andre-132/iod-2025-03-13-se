@@ -5,13 +5,13 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "jest",
     "lab1": "nodemon lab1.js",
     "lab2": "nodemon lab2.js",
     "lab3": "nodemon lab3.js",
-    "lab4": "nodemon lab4.js"
+    "lab4": "nodemon lab4.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^5.1.0",
