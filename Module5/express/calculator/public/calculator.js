@@ -1,54 +1,53 @@
-let expression = "";
+let currentInput = "";
 
 function press(value) {
-  expression += value;
-  document.getElementById("display").value = expression;
+  currentInput += value;
+  document.getElementById("display").value = currentInput;
 }
 
 function clearDisplay() {
-  expression = "";
+  currentInput = "";
   document.getElementById("display").value = "";
 }
 
 function calculate() {
-  const match = expression.match(/^(\d+)([+\-*/])(\d+)$/);
-
+  const match = currentInput.match(/(-?\d+\.?\d*)([+\-*/])(-?\d+\.?\d*)/);
   if (!match) {
-    document.getElementById("display").value = "Error";
-    return;
+    return alert("Invalid expression");
   }
 
   const x = match[1];
   const operator = match[2];
   const y = match[3];
 
-  let route = "";
-  switch (operator) {
-    case "+":
-      route = "add";
-      break;
-    case "-":
-      route = "subtract";
-      break;
-    case "*":
-      route = "multiply";
-      break;
-    case "/":
-      route = "divide";
-      break;
-    default:
-      document.getElementById("display").value = "Error";
-      return;
+  if (operator === "/" && parseFloat(y) === 0) {
+    return alert("Cannot divide by zero");
   }
 
-  fetch(`/calc/${route}?x=${x}&y=${y}`)
-    .then((res) => res.text())
+  let endpoint = "";
+  if (operator === "+") endpoint = "add";
+  else if (operator === "-") endpoint = "subtract";
+  else if (operator === "*") endpoint = "multiply";
+  else if (operator === "/") endpoint = "divide";
+
+  console.log(endpoint, x, y);
+
+  fetch(
+    `/calculator/${endpoint}?x=${encodeURIComponent(x)}&y=${encodeURIComponent(
+      y
+    )}`
+  )
+    .then((res) => {
+      console.log(res);
+      if (!res.ok) throw new Error("Server error");
+      return res.text();
+    })
     .then((data) => {
       document.getElementById("display").value = data;
-      expression = "";
+      currentInput = data.toString();
     })
     .catch((err) => {
+      console.error(err, "Hit My Catch Block");
       document.getElementById("display").value = "Error";
-      console.error(err);
     });
 }
