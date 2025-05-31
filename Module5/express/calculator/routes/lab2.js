@@ -4,41 +4,37 @@ const router = express.Router();
 router.get("/add", (req, res) => {
   console.log("hit route");
 
-  const x = parseFloat(req.query.x);
-  const y = parseFloat(req.query.y);
-  console.log("Hit Add Route");
+  const x = parseInt(req.query.x);
+  const y = parseInt(req.query.y);
   res.send(`Result ${x + y}`);
+  console.log(`x=${typeof x}`);
 });
-module.exports = router;
-/*
-exports.add = (req, res) => {
-  const x = parseFloat(req.query.x);
-  const y = parseFloat(req.query.y);
-  console.log("Hit Add Route");
-  res.send(`Result ${x + y}`);
-};
 
-exports.subtract = (req, res) => {
-  const x = parseFloat(req.query.x);
-  const y = parseFloat(req.query.y);
-  console.log("Hit Add Route");
+router.get("/subtract", (req, res) => {
+  console.log("hit route");
+
+  const x = parseInt(req.query.x);
+  const y = parseInt(req.query.y);
   res.send(`Result ${x - y}`);
-};
+  console.log(`x=${typeof x}`);
+});
 
-exports.multiply = (req, res) => {
-  const x = parseFloat(req.query.x);
-  const y = parseFloat(req.query.y);
-  console.log("Hit Add Route");
+router.get("/multiply", (req, res) => {
+  console.log("hit route");
+
+  const x = parseInt(req.query.x);
+  const y = parseInt(req.query.y);
   res.send(`Result ${x * y}`);
-};
+  console.log(`x=${typeof x}`);
+});
 
-exports.divide = (req, res) => {
-  const x = parseFloat(req.query.x);
-  const y = parseFloat(req.query.y);
-  if (y === 0) {
-    return res.status(400).send("Cannot divide by zero");
-  }
-  console.log("Hit Add Route");
+router.get("/divide", (req, res) => {
+  console.log("hit route");
+
+  const x = parseInt(req.query.x);
+  const y = parseInt(req.query.y);
   res.send(`Result ${x / y}`);
-};
-*/
+  console.log(`x=${typeof x}`);
+});
+
+module.exports = router;
