@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const Calculator = require("../libraries/lib");
+const calc = new Calculator();
 
 router.get("/add", (req, res) => {
   console.log("hit route");
 
   const x = parseInt(req.query.x);
   const y = parseInt(req.query.y);
-  res.send(`Result ${x + y}`);
+  const result = calc.add(x, y);
+  res.send(`Result ${result}`);
   console.log(`x=${typeof x}`);
 });
 
@@ -15,7 +18,8 @@ router.get("/subtract", (req, res) => {
 
   const x = parseInt(req.query.x);
   const y = parseInt(req.query.y);
-  res.send(`Result ${x - y}`);
+  const result = calc.subtract(x, y);
+  res.send(`Result ${result}`);
   console.log(`x=${typeof x}`);
 });
 
@@ -24,7 +28,8 @@ router.get("/multiply", (req, res) => {
 
   const x = parseInt(req.query.x);
   const y = parseInt(req.query.y);
-  res.send(`Result ${x * y}`);
+  const result = calc.multiply(x, y);
+  res.send(`Result ${result}`);
   console.log(`x=${typeof x}`);
 });
 
@@ -33,7 +38,8 @@ router.get("/divide", (req, res) => {
 
   const x = parseInt(req.query.x);
   const y = parseInt(req.query.y);
-  res.send(`Result ${x / y}`);
+  const result = calc.divide(x, y);
+  res.send(`Result ${result}`);
   console.log(`x=${typeof x}`);
 });
 
