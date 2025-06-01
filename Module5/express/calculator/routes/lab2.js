@@ -37,4 +37,17 @@ router.get("/divide", (req, res) => {
   console.log(`x=${typeof x}`);
 });
 
-module.exports = router;
+function add(x, y) {
+  return x + y;
+}
+function subtract(x, y) {
+  return x - y;
+}
+function multiply(x, y) {
+  return x * y;
+}
+function divide(x, y) {
+  return y === 0 ? "Cannot divide by zero" : x / y;
+}
+
+module.exports = { router, add, subtract, multiply, divide };
