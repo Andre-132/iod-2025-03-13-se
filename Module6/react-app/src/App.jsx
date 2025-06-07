@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import GreetingComp from "./Greeting";
+import BigCats from "./BigCats";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,6 +37,11 @@ function App() {
         <GreetingComp name="John">
           <p>This is a custom greeting message passed as children.</p>
         </GreetingComp>
+      </div>
+
+      <div>
+        <h2>Big Cats</h2>
+        <BigCats />
       </div>
     </>
   );
