@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import GreetingComp from "./Greeting";
 import BigCats from "./BigCats";
+import Emoji from "./Emoji";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -42,6 +43,10 @@ function App() {
       <div>
         <h2>Big Cats</h2>
         <BigCats />
+      </div>
+
+      <div>
+        <Emoji />
       </div>
     </>
   );

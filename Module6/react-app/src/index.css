@@ -66,3 +66,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.Emoji-border {
+  border: 2px solid red;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.Greeting {
+  border: 2px solid red;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.Cats {
+  border: 2px solid red;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 16px 0;
+}

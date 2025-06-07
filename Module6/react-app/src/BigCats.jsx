@@ -54,7 +54,7 @@ const cats = [
 
 function BigCats() {
   return (
-    <ul style={{ padding: 0 }}>
+    <ul className="Cats" style={{ padding: 0 }}>
       {cats.map((cat) => (
         <SingleCat
           key={cat.id}
