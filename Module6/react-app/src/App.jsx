@@ -5,6 +5,7 @@ import "./App.css";
 import GreetingComp from "./Greeting";
 import BigCats from "./BigCats";
 import Emoji from "./Emoji";
+import Calculator from "./Calculator";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -47,6 +48,10 @@ function App() {
 
       <div>
         <Emoji />
+      </div>
+
+      <div>
+        <Calculator />
       </div>
     </>
   );
