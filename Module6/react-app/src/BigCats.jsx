@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SingleCat from "./SingleCats";
+import AddCatForm from "./AddCatForm";
 
 const originalCats = [
   {
@@ -56,8 +57,7 @@ function BigCats() {
   const [cats, setCats] = useState(originalCats);
 
   const sortAlphabetically = () => {
-    const sorted = [...cats].sort((a, b) => a.name.localeCompare(b.name));
-    setCats(sorted);
+    setCats([...cats].sort((a, b) => a.name.localeCompare(b.name)));
   };
 
   const reverseList = () => {
@@ -65,30 +65,33 @@ function BigCats() {
   };
 
   const filterPanthera = () => {
-    const filtered = originalCats.filter((cat) =>
-      cat.latinName.startsWith("Panthera")
-    );
-    setCats(filtered);
+    setCats(originalCats.filter((cat) => cat.latinName.startsWith("Panthera")));
   };
 
   const resetList = () => {
     setCats(originalCats);
   };
 
+  const addCat = (newCat) => {
+    setCats([...cats, newCat]);
+  };
+
+  const deleteCat = (idToDelete) => {
+    setCats(cats.filter((cat) => cat.id !== idToDelete));
+  };
+
   return (
     <div>
+      <AddCatForm onAddCat={addCat} />
       <button onClick={sortAlphabetically}>Sort A-Z</button>
       <button onClick={reverseList}>Reverse</button>
       <button onClick={filterPanthera}>Filter Panthera</button>
       <button onClick={resetList}>Reset</button>
       <ul className="Cats" style={{ padding: 0 }}>
         {cats.map((cat) => (
-          <SingleCat
-            key={cat.id}
-            name={cat.name}
-            latinName={cat.latinName}
-            image={cat.image}
-          />
+          <li key={cat.id} style={{ listStyle: "none", marginBottom: "1rem" }}>
+            <SingleCat cat={cat} onDelete={deleteCat} />
+          </li>
         ))}
       </ul>
     </div>

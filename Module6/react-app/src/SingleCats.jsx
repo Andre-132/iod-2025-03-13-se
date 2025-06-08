@@ -1,22 +1,17 @@
 import React from "react";
 
-function SingleCats({ name, latinName, image }) {
+function SingleCat({ cat, onDelete }) {
   return (
-    <li
-      className="cat-item"
-      style={{ marginBottom: "1rem", listStyle: "none" }}
-    >
-      <img
-        src={image}
-        alt={name}
-        style={{ width: "150px", borderRadius: "8px", display: "block" }}
-      />
-      <h2>{name}</h2>
+    <div>
+      <h4>{cat.name}</h4>
       <p>
-        <em>{latinName}</em>
+        <em>{cat.latinName}</em>
       </p>
-    </li>
+      <img src={cat.image} alt={cat.name} width="200" />
+      <br />
+      <button onClick={() => onDelete(cat.id)}>Delete</button>
+    </div>
   );
 }
 
-export default SingleCats;
+export default SingleCat;
