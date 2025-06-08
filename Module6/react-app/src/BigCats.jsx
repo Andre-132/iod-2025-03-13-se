@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import SingleCat from "./SingleCats";
 
-const cats = [
+const originalCats = [
   {
     id: 1,
     name: "Cheetah",
@@ -53,17 +53,45 @@ const cats = [
 ];
 
 function BigCats() {
+  const [cats, setCats] = useState(originalCats);
+
+  const sortAlphabetically = () => {
+    const sorted = [...cats].sort((a, b) => a.name.localeCompare(b.name));
+    setCats(sorted);
+  };
+
+  const reverseList = () => {
+    setCats([...cats].slice().reverse());
+  };
+
+  const filterPanthera = () => {
+    const filtered = originalCats.filter((cat) =>
+      cat.latinName.startsWith("Panthera")
+    );
+    setCats(filtered);
+  };
+
+  const resetList = () => {
+    setCats(originalCats);
+  };
+
   return (
-    <ul className="Cats" style={{ padding: 0 }}>
-      {cats.map((cat) => (
-        <SingleCat
-          key={cat.id}
-          name={cat.name}
-          latinName={cat.latinName}
-          image={cat.image}
-        />
-      ))}
-    </ul>
+    <div>
+      <button onClick={sortAlphabetically}>Sort A-Z</button>
+      <button onClick={reverseList}>Reverse</button>
+      <button onClick={filterPanthera}>Filter Panthera</button>
+      <button onClick={resetList}>Reset</button>
+      <ul className="Cats" style={{ padding: 0 }}>
+        {cats.map((cat) => (
+          <SingleCat
+            key={cat.id}
+            name={cat.name}
+            latinName={cat.latinName}
+            image={cat.image}
+          />
+        ))}
+      </ul>
+    </div>
   );
 }
 
