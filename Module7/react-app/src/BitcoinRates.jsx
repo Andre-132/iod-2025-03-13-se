@@ -1,36 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useBitcoinPrice from "../Extract";
 
 const currencies = ["USD", "AUD", "NZD", "GBP", "EUR", "SGD"];
 
 function BitcoinRates() {
   const [currency, setCurrency] = useState(currencies[0]);
-  const [price, setPrice] = useState(null);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    const fetchPrice = async () => {
-      try {
-        const response = await fetch(
-          `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`,
-          { signal: controller.signal }
-        );
-        if (!response.ok) throw new Error("Network response was not ok");
-        const data = await response.json();
-        setPrice(data.bitcoin[currency.toLowerCase()]);
-        setError(null);
-      } catch (err) {
-        if (err.name !== "AbortError") {
-          console.error("Fetch error:", err);
-          setError("Failed to fetch price");
-        }
-      }
-    };
-
-    fetchPrice();
-
-    return () => controller.abort();
-  }, [currency]);
+  const { price, error } = useBitcoinPrice(currency);
 
   const options = currencies.map((curr) => (
     <option value={curr} key={curr}>
