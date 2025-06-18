@@ -1,4 +1,3 @@
-// useBitcoinPrice.js
 import { useState, useEffect } from "react";
 
 function useBitcoinPrice(currency) {
