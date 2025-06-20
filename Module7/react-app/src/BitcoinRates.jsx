@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useBitcoinPrice from "../Extract";
+import useBitcoinPrice from "./Extract";
 
 const currencies = ["USD", "AUD", "NZD", "GBP", "EUR", "SGD"];
 

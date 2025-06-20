@@ -6,6 +6,10 @@ import "./BitcoinRates";
 import BitcoinRates from "./BitcoinRates";
 import Emoji from "./Emoji";
 import { MoodProvider } from "./Emoji";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./NavBar";
+import HomePage from "./Home";
+import LoginForm from "./Login";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,6 +41,13 @@ function App() {
         <Emoji />
         <BitcoinRates />
       </MoodProvider>
+
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/bitcoin" element={<BitcoinRates />} />
+      </Routes>
     </>
   );
 }
