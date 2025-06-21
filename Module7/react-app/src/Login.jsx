@@ -1,10 +1,12 @@
+import { TextField } from "@mui/material";
+
 function LoginForm() {
   return (
     <div>
       <h1>Login</h1>
       <label>Email:</label>
       <br />
-      <input type="email" placeholder="you@example.com" />
+      <TextField id="standard-basic" label="Standard" variant="standard" />
     </div>
   );
 }
