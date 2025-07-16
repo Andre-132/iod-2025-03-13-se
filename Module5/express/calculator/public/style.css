@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+input[type="number"] {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 150px;
+}
+
+select {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  min-width: 120px;
+}
+
+button {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.history {
+  margin-top: 30px;
+}
+
+.history h3 {
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+.history-item {
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border-left: 4px solid #007bff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-item .calculation {
+  font-weight: bold;
+}
+
+.history-item .timestamp {
+  color: #666;
+  font-size: 12px;
+}
+
+#clear-history {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+
+#clear-history:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type="number"] {
+    width: 100%;
+  }
+
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
