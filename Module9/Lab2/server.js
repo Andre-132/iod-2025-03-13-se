@@ -2,10 +2,9 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 
-application / json;
 app.use(express.json());
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to my MongoDB application." });
+  res.json({ message: "Welcome to my MongoDB blog lab." });
 });
 
 let dbConnect = require("./dbConnect");
