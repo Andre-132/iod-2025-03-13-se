@@ -2,9 +2,9 @@ const { DataTypes, Model } = require("sequelize");
 let dbConnect = require("../dbConnect");
 const sequelizeInstance = dbConnect.Sequelize;
 
-class Like extends Model {}
+class Comment extends Model {}
 
-Like.init(
+Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,7 +12,7 @@ Like.init(
       autoIncrement: true,
       primaryKey: true,
     },
-    post_id: {
+    postId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -29,8 +29,16 @@ Like.init(
       },
     },
     content: {
-      type: DataTypes.STRING(1000),
+      type: DataTypes.TEXT,
+      allowNull: false,
+    },
+    parentId: {
+      type: DataTypes.INTEGER,
       allowNull: true,
+      references: {
+        model: "comments",
+        key: "id",
+      },
     },
     createdAt: {
       type: DataTypes.DATE,
@@ -40,11 +48,11 @@ Like.init(
   },
   {
     sequelize: sequelizeInstance,
-    modelName: "Like",
-    tableName: "likes",
+    modelName: "Comment",
+    tableName: "comments",
     timestamps: false,
     freezeTableName: true,
   }
 );
 
-module.exports = Like;
+module.exports = Comment;
