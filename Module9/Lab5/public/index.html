@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO Chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="nickname-modal" id="nickname-modal">
+      <div class="nickname-form">
+        <h2>Join the Chat</h2>
+        <input
+          type="text"
+          id="nickname-input"
+          placeholder="Enter your nickname..."
+          maxlength="20"
+        />
+        <button id="nickname-submit">Join Chat</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="sidebar">
+        <h3>Online Users (<span id="user-count">0</span>)</h3>
+        <ul class="user-list" id="users"></ul>
+      </div>
+
+      <div class="chat-container">
+        <div class="header">
+          <h1>Socket.IO Chat</h1>
+          <p>Welcome, <span id="current-user">Guest</span>!</p>
+        </div>
+
+        <div class="messages" id="messages"></div>
+        <div class="typing-indicator" id="typing"></div>
+
+        <div class="form-container">
+          <input
+            id="message-input"
+            autocomplete="off"
+            placeholder="Type a message..."
+            disabled
+          />
+          <button id="send-button" disabled>Send</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/chatApp.js"></script>
+</html>
